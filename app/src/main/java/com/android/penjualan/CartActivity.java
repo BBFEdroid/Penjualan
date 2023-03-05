@@ -1,12 +1,6 @@
 package com.android.penjualan;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.ContentValues;
-import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -18,11 +12,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.android.penjualan.database.DatabaseHelper;
-import com.android.penjualan.model.CartModel;
-import com.android.penjualan.model.ProductModel;
 import com.android.penjualan.model.TransactionDetailModel;
-import com.android.penjualan.model.UserModel;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.text.SimpleDateFormat;

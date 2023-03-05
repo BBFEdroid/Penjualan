@@ -1,21 +1,17 @@
 package com.android.penjualan;
 
-import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.penjualan.database.DatabaseHelper;
 import com.android.penjualan.model.ProductModel;
-import com.google.gson.Gson;
 
 public class ProductDetailActivity extends AppCompatActivity {
     private ImageView productdetailImage;
@@ -42,16 +38,16 @@ public class ProductDetailActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        Intent intent=getIntent();
-        int product_id=intent.getIntExtra("product_id",0);
+        Intent intent = getIntent();
+        int product_id = intent.getIntExtra("product_id", 0);
 
         // Initialize database helper
         databaseHelper = new DatabaseHelper(this);
         // Insert data into Users table
         SQLiteDatabase db = databaseHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery("select * from products where id=?", new String[]{String.valueOf(product_id)});
-        if (cursor.moveToFirst()){
-            ProductModel productModel=new ProductModel();
+        if (cursor.moveToFirst()) {
+            ProductModel productModel = new ProductModel();
             productModel.setProduct_id(cursor.getInt(0));
             productModel.setProduct_name(cursor.getString(1));
             productModel.setProduct_price(cursor.getInt(3));

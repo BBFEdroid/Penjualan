@@ -1,9 +1,9 @@
 package com.android.penjualan;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-
-import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 

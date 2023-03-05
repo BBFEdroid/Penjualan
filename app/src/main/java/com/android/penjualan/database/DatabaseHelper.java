@@ -2,7 +2,6 @@ package com.android.penjualan.database;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -53,7 +52,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Create tables
     private static final String CREATE_TABLE_USERS = "CREATE TABLE " + TABLE_LOGINS + "("
             + KEY_ID + " INTEGER PRIMARY KEY,"
-            + KEY_USERNAME+ " VARCHAR(50),"
+            + KEY_USERNAME + " VARCHAR(50),"
             + KEY_PASSWORD + " VARCHAR(255)" + ")";
 
     private static final String CREATE_TABLE_PRODUCTS = "CREATE TABLE " + TABLE_PRODUCTS + "("
@@ -133,70 +132,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put("dimension", "9cmx5cm");
         values.put("unit", "PCS");
         db.insert("products", null, values);
-
-////        trx header
-//        values = new ContentValues();
-//        values.put("document_code", "TRX");
-//        values.put("document_number", "001");
-//        values.put("user", "Smit");
-//        values.put("total", 67500);
-//        values.put("date", "DD-MM-YYYY)");
-//        db.insert("transaction_header", null, values);
-//
-//        values = new ContentValues();
-//        values.put("document_code", "TRX");
-//        values.put("document_number", "002");
-//        values.put("user", "Smit");
-//        values.put("total", 67500);
-//        values.put("date", "DD-MM-YYYY)");
-//        db.insert("transaction_header", null, values);
-//
-//        values = new ContentValues();
-//        values.put("document_code", "TRX");
-//        values.put("document_number", "003");
-//        values.put("user", "Smit");
-//        values.put("total", 22500);
-//        values.put("date", "DD-MM-YYYY)");
-//        db.insert("transaction_header", null, values);
-//
-////        trx detail
-//        values = new ContentValues();
-//        values.put("document_code", "TRX");
-//        values.put("document_number", "001");
-//        values.put("product_code", "SKUSKILNP");
-//        values.put("price", 13500);
-//        values.put("quantity", 5);
-//        values.put("unit", "PCS");
-//        values.put("sub_total", 67500);
-//        values.put("currency", "IDR");
-//        db.insert("transaction_detail", null, values);
-//
-//        values = new ContentValues();
-//        values.put("document_code", "TRX");
-//        values.put("document_number", "002");
-//        values.put("product_code", "SKUSKILNP");
-//        values.put("price", 13500);
-//        values.put("quantity", 5);
-//        values.put("unit", "PCS");
-//        values.put("sub_total", 67500);
-//        values.put("currency", "IDR");
-//        db.insert("transaction_detail", null, values);
-//
-//        values = new ContentValues();
-//        values.put("document_code", "TRX");
-//        values.put("document_number", "003");
-//        values.put("product_code", "SKUSKILNP");
-//        values.put("price", 4500);
-//        values.put("quantity", 5);
-//        values.put("unit", "PCS");
-//        values.put("sub_total", 22500);
-//        values.put("currency", "IDR");
-//        db.insert("transaction_detail", null, values);
-
-
-
-//        String query = "SELECT * FROM logins WHERE user = '" + admin + "' AND password = '" + password + "'";
-//        Cursor cursor = db.rawQuery(query, null);
     }
 
     @Override
@@ -207,7 +142,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_TRANSACTION_DETAIL);
         onCreate(db);
     }
-
 
 }
 

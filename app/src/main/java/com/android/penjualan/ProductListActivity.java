@@ -2,13 +2,6 @@ package com.android.penjualan;
 
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-import androidx.appcompat.widget.AppCompatButton;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -21,11 +14,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.android.penjualan.database.DatabaseHelper;
 import com.android.penjualan.model.ProductModel;
 import com.google.gson.Gson;
-
-import org.json.JSONArray;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -59,7 +56,7 @@ public class ProductListActivity extends AppCompatActivity {
         // Insert data into Users table
         SQLiteDatabase db = databaseHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery("select * from products", null);
-        productModels=new ArrayList<>();
+        productModels = new ArrayList<>();
         if (cursor.moveToFirst()) {
             do {
                 ProductModel productModel = new ProductModel();
@@ -100,24 +97,24 @@ public class ProductListActivity extends AppCompatActivity {
             });
             holder.productImg.setOnClickListener(v -> {
                 Intent intent = new Intent(ProductListActivity.this, ProductDetailActivity.class);
-                intent.putExtra("product_id",productModel.getProduct_id());
+                intent.putExtra("product_id", productModel.getProduct_id());
                 startActivity(intent);
             });
-            holder.productBtnBuy.setOnClickListener( v -> {
-                int qty=1;
+            holder.productBtnBuy.setOnClickListener(v -> {
+                int qty = 1;
                 SQLiteDatabase dbRead = databaseHelper.getReadableDatabase();
-                Cursor cursorRead= dbRead.rawQuery("select * from transaction_details where product_code=?", new String[]{productModel.getProduct_code()});
-                if(cursorRead.moveToFirst() ){
-                    if(cursorRead.getInt(0)>0){
-                        qty+=cursorRead.getInt(5);
+                Cursor cursorRead = dbRead.rawQuery("select * from transaction_details where product_code=?", new String[]{productModel.getProduct_code()});
+                if (cursorRead.moveToFirst()) {
+                    if (cursorRead.getInt(0) > 0) {
+                        qty += cursorRead.getInt(5);
                         SQLiteDatabase db = databaseHelper.getReadableDatabase();
                         ContentValues values = new ContentValues();
                         values.put("quantity", qty);
-                        values.put("sub_total", productModel.getProduct_price()*qty);
-                        db.update("transaction_details",values,"id=?",new String[]{String.valueOf(cursorRead.getInt(0))});
+                        values.put("sub_total", productModel.getProduct_price() * qty);
+                        db.update("transaction_details", values, "id=?", new String[]{String.valueOf(cursorRead.getInt(0))});
                         db.close();
                     }
-                }else {
+                } else {
                     SQLiteDatabase db = databaseHelper.getReadableDatabase();
                     ContentValues values = new ContentValues();
                     values.put("document_code", "TRX");
@@ -126,7 +123,7 @@ public class ProductListActivity extends AppCompatActivity {
                     values.put("price", productModel.getProduct_price());
                     values.put("quantity", qty);
                     values.put("unit", productModel.getProduct_unit());
-                    values.put("sub_total", productModel.getProduct_price()*qty);
+                    values.put("sub_total", productModel.getProduct_price() * qty);
                     values.put("currency", productModel.getProduct_currency());
                     db.insert("transaction_details", null, values);
                     db.close();

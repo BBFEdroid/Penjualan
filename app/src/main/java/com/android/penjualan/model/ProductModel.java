@@ -1,7 +1,5 @@
 package com.android.penjualan.model;
 
-import android.graphics.drawable.Drawable;
-
 public class ProductModel {
     int product_id, product_discount, product_price;
     String product_code, product_name, product_currency, product_dimension, product_unit;
