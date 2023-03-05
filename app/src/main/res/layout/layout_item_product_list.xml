@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:padding="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:elevation="2dp"
+    android:background="@drawable/shape_rectangle_small_white">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/item_product_list_img"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/dummy_images"
+        app:civ_border_width="1dp"
+        app:civ_border_color="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/item_product_list_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/app_name"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/item_product_list_img"
+        app:layout_constraintStart_toEndOf="@+id/item_product_list_img"/>
+
+    <TextView
+        android:id="@+id/item_product_list_lastest_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/product_price_lastest"
+        android:textSize="10sp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_product_list_name"
+        app:layout_constraintStart_toEndOf="@+id/item_product_list_img"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/item_product_list_rp_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/currency_idr_title"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/item_product_list_lastest_price"
+        app:layout_constraintStart_toEndOf="@+id/item_product_list_img"/>
+
+    <TextView
+        android:id="@+id/item_product_list_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/price_value"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/item_product_list_rp_title"
+        app:layout_constraintStart_toEndOf="@+id/item_product_list_rp_title"/>
+
+    <TextView
+        android:id="@+id/item_product_list_btn_buy"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/shape_rounded_rectangle_blue"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/buy_title"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@+id/item_product_list_price"
+        app:layout_constraintStart_toEndOf="@+id/item_product_list_img"
+        app:textSize="16sp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

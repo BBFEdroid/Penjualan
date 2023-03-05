@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Penjualan</string>
+    <string name="username_title">Username</string>
+    <string name="password_title">Password</string>
+    <string name="login_title">Login</string>
+    <string name="checkout_title">Checkout</string>
+    <string name="confirm_title">Confirm</string>
+    <string name="total_title">TOTAL : </string>
+    <string name="total_value">Rp. 0,-</string>
+    <string name="product_detail_title">Product Detail</string>
+    <string name="buy_title">Buy</string>
+    <string name="dimension_title">Dimension</string>
+    <string name="price_title">Price</string>
+    <string name="price_unit_title">Price Unit</string>
+    <string name="price_value">Rp. 0,-</string>
+    <string name="dimension_value">0cm x 0cm</string>
+    <string name="price_unit_value">PCS</string>
+    <string name="product_price_lastest"><strike>Rp. 0,-</strike></string>
+    <string name="qty_value">1</string>
+    <string name="subtotal_title">Sub Total:</string>
+    <string name="subtotal_value">Rp. 0.000</string>
+    <string name="selling_complete_title">Penjualan Sukses!</string>
+    <string name="thanks_title">Terimakasih</string>
+    <string name="back_to_selling_menu_title">Kembali ke Menu Utama</string>
+    <string name="product_dummy">So Klin</string>
+    <string name="currency_idr_title">Rp. </string>
+</resources>

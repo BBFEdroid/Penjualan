@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:padding="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:elevation="2dp"
+    android:background="@drawable/shape_rectangle_small_white">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/item_cart_img"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/dummy_images"
+        app:civ_border_width="1dp"
+        app:civ_border_color="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/item_cart_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/app_name"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/item_cart_img"
+        app:layout_constraintStart_toEndOf="@+id/item_cart_img"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/item_cart_qty"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/poppins"
+        android:textSize="14sp"
+        android:text="@string/qty_value"
+        android:textColor="@color/black"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:inputType="number"
+        android:singleLine="true"
+        android:maxLength="3"
+        android:textAlignment="center"
+        android:background="@drawable/shape_rectangle_border_grey_small"
+        app:layout_constraintStart_toEndOf="@+id/item_cart_img"
+        app:layout_constraintTop_toBottomOf="@+id/item_cart_name">
+
+    </com.google.android.material.textfield.TextInputEditText>
+
+    <TextView
+        android:id="@+id/item_cart_price_unit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/price_unit_value"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/item_cart_qty"
+        app:layout_constraintBottom_toBottomOf="@+id/item_cart_qty"
+        app:layout_constraintStart_toEndOf="@+id/item_cart_qty"/>
+
+    <TextView
+        android:id="@+id/item_cart_subtotal_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/subtotal_title"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/item_cart_qty"
+        app:layout_constraintStart_toEndOf="@+id/item_cart_img"/>
+
+    <TextView
+        android:id="@+id/rp_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/currency_idr_title"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="@+id/item_cart_subtotal_title"
+        app:layout_constraintBottom_toBottomOf="@+id/item_cart_subtotal_title"
+        app:layout_constraintStart_toEndOf="@+id/item_cart_subtotal_title"/>
+
+    <TextView
+        android:id="@+id/item_cart_subtotal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/subtotal_value"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rp_title"
+        app:layout_constraintTop_toTopOf="@+id/rp_title"
+        app:layout_constraintBottom_toBottomOf="@+id/rp_title"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
